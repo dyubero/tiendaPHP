@@ -1,6 +1,16 @@
 @charset "utf-8";
 /* CSS Document */
 
+
+
+body{
+    background-image: url('image/bgPagepng.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-attachment: fixed;
+}
+   
+
 *
 {
  margin:0;

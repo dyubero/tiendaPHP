@@ -35,7 +35,7 @@ if(isset($_POST['btn-login']))
 <title>cleartuts - Login & Registration System</title>
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
-<body>
+    <body>
 <center>
 <div id="login-form">
 <form method="post">

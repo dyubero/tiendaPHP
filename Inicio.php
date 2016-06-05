@@ -41,6 +41,16 @@ $userRow=mysql_fetch_array($res);
 <title>Welcome - <?php echo $userRow['email']; ?></title>
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
+    
+    <style>
+body  {
+    background-image: url('image/bgPagepng.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-attachment: fixed;
+}
+</style>
+    
 <body>
     
     
@@ -73,7 +83,7 @@ $userRow=mysql_fetch_array($res);
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <?php echo $userRow['username']; ?>&nbsp;<a href="logout.php?logout">Sign Out</a>
+                      <a href="logout.php?logout">Sign Out</a>
                     </li>
                     
                 </ul>
@@ -88,25 +98,8 @@ $userRow=mysql_fetch_array($res);
 
         <div class="row">
 
-            <div class="col-md-3">
-                <p class="lead">Shop Name</p>
-                <div class="list-group">
-                    <a href="#" class="list-group-item">Category 1</a>
-                
-                    
-                     
-    
-                
-                    
-      
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                </div>
+            <div class="col-md-2">
+             
             </div>
 
             <div class="col-md-9">
@@ -160,9 +153,6 @@ $userRow=mysql_fetch_array($res);
                                 <form action="buy.php"  method="post">
                                 
                                 <input type="radio" name="GPU" value="<?php echo $row["id_prod"];?>">Seleccionar</input>
-                                
-                                
-                                
                                 
                                 
                         </div>
