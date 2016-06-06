@@ -125,17 +125,14 @@ $update_stock = $row2["stock"] - $nItems;
         <div class="col-lg-8"> <button class="btn-lg btn-block btn-danger" onclick="myFunction()">BUY PRODUCTS</button></div>
          <div class="col-lg-2"></div>
 </div>
-        <script>
-            
-            function myFunction() {
+       
 <?php
 if (mysql_query("INSERT INTO sales(saleuser,user_id,product_id,unities,totalprice,date) VALUES('$userMail','$userID','$gpu','$nItems','$totalPrice','$date')")) {
     echo "<script>alert('Your purchase has been realized');</script>";
 }
 mysql_query("update products set stock='$update_stock' WHERE id_prod='$gpu';");
 ?>
-    }
-        </script>
+    
 
 
 
