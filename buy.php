@@ -13,6 +13,8 @@
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
+                
+                <title>MR.ROBOT</title>
               
                 <a class="navbar-brand" href="#"><h4>MR.ROBOT</h4></a>
             </div>
@@ -68,6 +70,9 @@ if ($nItems > $row2['stock']) {
     $nItems = $row2['stock'];
     echo "<script>alert('You are going to order more products that we have in stock, your units will be the same as the stock');</script>";
 }
+if($nItems <= 0){
+    $nItems = 1;  
+}
 
 
 isset($_SESSION['user']);
@@ -122,13 +127,24 @@ $update_stock = $row2["stock"] - $nItems;
 
 <div class="row">
     <div class="col-lg-2"></div>
-        <div class="col-lg-8"> <button class="btn-lg btn-block btn-danger" onclick="myFunction()">BUY PRODUCTS</button></div>
+    <div class="col-lg-8"> <button id="ButtonBuy" class="btn-lg btn-block btn-danger" onclick="buyItems()">BUY PRODUCTS</button></div>
          <div class="col-lg-2"></div>
 </div>
-       
+      
+<script>
+function buyItems() {
+    alert("Your purchase has been realized")
+}
+</script>
+
+
+
+
+
+
 <?php
 if (mysql_query("INSERT INTO sales(saleuser,user_id,product_id,unities,totalprice,date) VALUES('$userMail','$userID','$gpu','$nItems','$totalPrice','$date')")) {
-    echo "<script>alert('Your purchase has been realized');</script>";
+    
 }
 mysql_query("update products set stock='$update_stock' WHERE id_prod='$gpu';");
 ?>

@@ -38,7 +38,7 @@ $userRow=mysql_fetch_array($res);
     
     
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Welcome - <?php echo $userRow['email']; ?></title>
+<title>Welcome-<?php echo $userRow['email']; ?></title>
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
     
@@ -77,13 +77,14 @@ body  {
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
               
-                <a class="navbar-brand" href="#"><h4>MR.ROBOT</h4></a>
+                <a class="navbar-brand"><p id="nPag">MR.ROBOT</p></a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li>
-                      <a href="logout.php?logout">Sign Out</a>
+                    
+                    <li >
+                        <a href="logout.php?logout"  id="singOut">Sign Out</a>
                     </li>
                     
                 </ul>
@@ -137,7 +138,6 @@ body  {
 
                 <div class="row">
 <?php while ( $row = $result->fetch_assoc()) {
-                             
                            ?>
                 <div class="col-sm-4 col-lg-4 col-md-4">
                         <div class="thumbnail">
@@ -152,7 +152,7 @@ body  {
                                 
                                 <form action="buy.php"  method="post">
                                 
-                                <input type="radio" name="GPU" value="<?php echo $row["id_prod"];?>">Seleccionar</input>
+                                <input type="radio" name="GPU" value="<?php echo $row["id_prod"];?>">Select</input>
                                 
                                 
                         </div>
@@ -164,12 +164,14 @@ body  {
 </br>
                 </div>
                 
-              
-                
-               Numero de articulos deseados:
+                <div class="col-lg-3"></div>
+                <div class="col-lg-7 jumbotron" id="divStock">
+                    <b>Number of articles:</b>
                <input type="number" name="NumOfItems"></input>
                
-               <button>BUY</button>
+               <button><b>BUY</b></button>
+                </div>
+                <div class="col-lg-2"></div>
                 </form>
             </br>
             </br>

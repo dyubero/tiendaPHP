@@ -34,6 +34,7 @@ if (isset($_POST['btn-signup'])) {
         <center>
             <div id="login-form">
                 <form method="post">
+                      <p id="nPag">MR.ROBOT</p>
                     <table align="center" width="30%" border="0">
                         <tr>
                             <td><input type="text" name="uname" placeholder="User Name" required /></td>
